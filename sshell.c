@@ -22,7 +22,7 @@ struct command{
 
 struct command splitRegularCommand(char* input){
   struct command c;
-  char* tok = malloc(MAX_CMD*sizeof(char));
+  char* tok = malloc(MAX_LEN*sizeof(char));
 
   tok = strtok(input," ");
   c.real_cmd = tok;
@@ -39,9 +39,9 @@ struct command splitRegularCommand(char* input){
 
 struct command outputRedirectionCommand(char* input){
   struct command c;
-  char* tok = malloc(MAX_CMD*sizeof(char));
-  char* tok2 = malloc(MAX_CMD*sizeof(char));
-  char* trans = malloc(MAX_CMD*sizeof(char));
+  char* tok = malloc(MAX_LEN*sizeof(char));
+  char* tok2 = malloc(MAX_LEN*sizeof(char));
+  char* trans = malloc(MAX_LEN*sizeof(char));
   char* tempCopy = malloc(MAX_CMD*sizeof(char));
 
   strcpy(tempCopy,input);
@@ -131,6 +131,7 @@ int main(void)
     char* path = malloc(MAX_CMD*sizeof(char));
     char* pathname = malloc(MAX_CMD*sizeof(char));
     //pipes
+    //Not used in this submission but will fixed after submitted.
     //char** pipeCmd = malloc(MAX_CMD*sizeof(char*));
     char* pCopy = malloc(MAX_CMD*sizeof(char));
 
