@@ -45,7 +45,7 @@ struct command outputRedirectionCommand(char* input){
   char* tempCopy = malloc(MAX_CMD*sizeof(char));
 
   strcpy(tempCopy,input);
-  
+
   tok = strtok(tempCopy, ">");
   trans = tok;
 
@@ -54,10 +54,10 @@ struct command outputRedirectionCommand(char* input){
     c.fileName = tok;
     break;
   }
-  
+
   tok2 = strtok(trans, " ");
   c.real_cmd = tok2;
-  
+
   while(tok2 != NULL){
     tok2 = strtok(NULL, " ");
     c.text = tok2;
@@ -147,7 +147,7 @@ int main(void)
     /* Print command line if stdin is not provided by terminal */
     if (!isatty(STDIN_FILENO)) {
             printf("%s", cmd);
-            fflush(stdout); 
+            fflush(stdout);
     }
 
     /* Remove trailing newline from command line */
@@ -158,7 +158,7 @@ int main(void)
     if(cmd[0] == '\n'){
       continue;
     }
-    
+
     strcpy(cmdCopy,cmd);
     strcpy(pCopy,cmd);
 
@@ -174,7 +174,7 @@ int main(void)
         }
       }else{//builtin commands
         rcmd = splitRegularCommand(cmdCopy);
-        
+
         if(strcmp(rcmd.real_cmd, " ") == 0){
           fprintf(stderr,"Error: missing command\n");
           exit(1);
@@ -209,7 +209,7 @@ int main(void)
 
             strcat(pathname, "/");
             strcat(pathname,rcmd.fileName);
-            
+
             if(!(fopen(pathname,"w"))){
               fprintf(stderr, "Error: cannot open output file\n");
             }
@@ -305,7 +305,7 @@ int main(void)
       }
 
       char* message = malloc(MAX_CMD*sizeof(char));
-      
+
 
       strcat(message," + completed '");
       strcat(message, cmd);
