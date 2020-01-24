@@ -131,7 +131,7 @@ int main(void)
     char* path = malloc(MAX_CMD*sizeof(char));
     char* pathname = malloc(MAX_CMD*sizeof(char));
     //pipes
-    char** pipeCmd = malloc(MAX_CMD*sizeof(char*));
+    //char** pipeCmd = malloc(MAX_CMD*sizeof(char*));
     char* pCopy = malloc(MAX_CMD*sizeof(char));
 
     int status;
