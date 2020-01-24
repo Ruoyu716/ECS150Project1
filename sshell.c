@@ -261,7 +261,7 @@ int main(void)
     }else{//PIPES
       int pNum = 0;
 
-      pipeCmd = pipeCommand(pCopy);
+      //pipeCmd = pipeCommand(pCopy);
       pNum = countPipeNum(cmd);
       //https://www.programiz.com/c-programming/c-structures-pointers
       struct command* pipes = malloc(pNum*sizeof(struct command));
