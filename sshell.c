@@ -180,7 +180,7 @@ int main(void)
           exit(1);
         }else if(strcmp(rcmd.real_cmd, "exit") == 0){
           fprintf(stderr, "Bye...\n");
-          //fprintf(stderr,"+ completed '%s' [%d]\n",cmd,WEXITSTATUS(status));
+          fprintf(stderr,"+ completed '%s' [%d]\n",cmd,0);
           return EXIT_SUCCESS;
         }
       }
